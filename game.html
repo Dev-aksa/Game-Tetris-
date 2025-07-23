@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Tetris</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <div class="info-panel-inline">
+      <span>Level: <span id="level">1</span></span>
+      <span>Skor: <span id="score">0</span></span>
+      <span>Highscore: <span id="highscore">0</span></span>
+    </div>
+    <div class="menu-wrapper">
+      <button id="menu-button">☰</button>
+      <div id="dropdown-menu" class="dropdown hidden">
+        <button id="resume-button">Lanjutkan</button>
+        <button id="pause-button">Pause</button>
+        <button id="back-button">Kembali</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-container">
+    <div id="tetris-board"></div>
+    <div class="controls">
+      <button onclick="moveLeft()">◀️</button>
+      <button onclick="rotate()">🔄</button>
+      <button onclick="moveRight()">▶️</button>
+      <button onclick="drop()">⬇️</button>
+    </div>
+  </div>
+
+  <!-- Popup Input Nama -->
+  <div id="gameover-popup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Game Over!</h2>
+      <p>Masukkan Nama Anda:</p>
+      <input type="text" id="playerNameInput" placeholder="Nama Anda" />
+      <button id="submitScoreBtn">Simpan Skor</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

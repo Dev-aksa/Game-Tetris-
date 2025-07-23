@@ -1,0 +1,160 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.info-panel-inline {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+#menu-button {
+  background: #333;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dropdown {
+  margin-top: 10px;
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+}
+
+.dropdown button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+.game-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tetris-board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  width: min(60vmin, 70vh);
+  aspect-ratio: 10 / 12;
+  background: #111;
+  border: 2px solid #555;
+  margin: 0 auto;
+  gap: 0;
+}
+
+#tetris-board div {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+.controls button {
+  font-size: 24px;
+  padding: 8px 16px;
+  margin: 4px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #555;
+}
+
+/* Popup Game Over */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #222;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.popup-content input {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  background: #4caf50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none;
+}
