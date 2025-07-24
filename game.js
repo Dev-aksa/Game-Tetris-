@@ -272,6 +272,31 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// === Kontrol Swipe untuk Layar Sentuh ===
+let touchStartX = 0;
+let touchStartY = 0;
+
+document.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, false);
+
+document.addEventListener("touchend", (e) => {
+  let dx = e.changedTouches[0].clientX - touchStartX;
+  let dy = e.changedTouches[0].clientY - touchStartY;
+
+  if (Math.abs(dx) > Math.abs(dy)) {
+    // Swipe Horizontal
+    if (dx > 30) moveRight();     // Swipe kanan
+    else if (dx < -30) moveLeft(); // Swipe kiri
+  } else {
+    // Swipe Vertikal
+    if (dy > 30) drop();           // Swipe bawah
+    else if (dy < -30) rotate();   // Swipe atas / tap ke atas
+  }
+}, false);
+
+
 // === Submit Score ke Leaderboard ===
 document.getElementById("submitScoreBtn").addEventListener("click", () => {
   const name = document.getElementById("playerNameInput").value.trim();
